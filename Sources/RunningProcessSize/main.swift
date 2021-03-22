@@ -23,6 +23,9 @@
 
 import Foundation
 
+// Normally, classes shall be logically distributed across own source files,
+// but due to tiny project size, and aim to simplify the code review, they are
+// grouped into the single source file.
 class Utility {
     private static func compatibleRun( _ process: Process, _ command: String )
         -> Bool
