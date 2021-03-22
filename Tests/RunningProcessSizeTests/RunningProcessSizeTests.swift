@@ -2,7 +2,7 @@ import XCTest
 import class Foundation.Bundle
 
 final class RunningProcessSizeTests: XCTestCase {
-    func testExample() throws {
+    func testUsage() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
@@ -26,7 +26,15 @@ final class RunningProcessSizeTests: XCTestCase {
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         let output = String(data: data, encoding: .utf8)
 
-        XCTAssertEqual(output, "Hello, world!\n")
+        let usageMessage = """
+        USAGE: RunningProcessSize <num>[s/m/h]
+
+        WARNING: entering 2h+ will take a while to parse...
+
+
+        """
+
+        XCTAssertEqual(output, usageMessage)
     }
 
     /// Returns path to the built products directory.
@@ -42,6 +50,6 @@ final class RunningProcessSizeTests: XCTestCase {
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("testUsage", testUsage),
     ]
 }
