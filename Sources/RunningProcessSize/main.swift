@@ -27,6 +27,8 @@ import Foundation
 // but due to tiny project size, and aim to simplify the code review, they are
 // grouped into the single source file.
 class Utility {
+    private init() {}
+
     private static func compatibleRun( _ process: Process, _ command: String )
         -> Bool
     {
@@ -130,6 +132,8 @@ struct LogEntry : Decodable
 
 class LogExtractor
 {
+    private init() {}
+
     static func getLastLogForPeriod( _ period: String ) -> [LogEntry]
     {
         let command = "/usr/bin/log"
@@ -165,6 +169,8 @@ struct ProcessMeta
 
 class LogProcessor
 {
+    private init() {}
+
     static func generateProcessList( _ logData: [LogEntry] )
         -> [String : ProcessMeta]
     {
@@ -197,6 +203,8 @@ class LogProcessor
 
 class ProcessView
 {
+    private init() {}
+
     private static func pumpSpaces( _ item: String, _ minColumnWidth: Int )
         -> String
     {
